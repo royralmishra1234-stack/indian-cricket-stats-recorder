@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Indian Cricket Stats Recorder</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <header class="topbar">
+        <div>
+          <p class="eyebrow">Indian Cricket Team</p>
+          <h1>Runs & Wickets Stats Recorder</h1>
+        </div>
+        <button id="seed-data" class="secondary-btn">Load sample data</button>
+      </header>
+
+      <section class="card form-card">
+        <h2>Add player stats</h2>
+        <div class="form-grid">
+          <label>
+            Player name
+            <input id="player-name" type="text" placeholder="e.g. Virat Kohli" />
+          </label>
+
+          <label>
+            Format
+            <select id="format-select">
+              <option value="t20i">T20I</option>
+              <option value="odi">ODI</option>
+              <option value="test">Test</option>
+            </select>
+          </label>
+        </div>
+
+        <div class="tabs">
+          <button class="tab-button active" data-tab="batting-tab">Batting stats</button>
+          <button class="tab-button" data-tab="bowling-tab">Bowling stats</button>
+        </div>
+
+        <div id="batting-tab" class="tab-panel active">
+          <form id="batting-form" class="stats-form">
+            <div class="field-grid">
+              <label>Matches<input name="matches" type="number" min="0" value="0" /></label>
+              <label>Innings<input name="innings" type="number" min="0" value="0" /></label>
+              <label>No.s<input name="notOuts" type="number" min="0" value="0" /></label>
+              <label>Runs<input name="runs" type="number" min="0" value="0" /></label>
+              <label>Ball faced<input name="ballsFaced" type="number" min="0" value="0" /></label>
+              <label>0s<input name="zeros" type="number" min="0" value="0" /></label>
+              <label>30s<input name="thirties" type="number" min="0" value="0" /></label>
+              <label>50s<input name="fifties" type="number" min="0" value="0" /></label>
+              <label>100s<input name="hundreds" type="number" min="0" value="0" /></label>
+              <label>4s<input name="fours" type="number" min="0" value="0" /></label>
+              <label>6s<input name="sixes" type="number" min="0" value="0" /></label>
+              <label>Best score<input name="bestScore" type="number" min="0" value="0" /></label>
+            </div>
+            <button type="submit" class="primary-btn">Save batting stats</button>
+          </form>
+        </div>
+
+        <div id="bowling-tab" class="tab-panel">
+          <form id="bowling-form" class="stats-form">
+            <div class="field-grid">
+              <label>Innings<input name="innings" type="number" min="0" value="0" /></label>
+              <label>Wickets<input name="wickets" type="number" min="0" value="0" /></label>
+              <label>Runs<input name="runs" type="number" min="0" value="0" /></label>
+              <label>Overs<input name="overs" type="number" min="0" step="0.01" value="0" /></label>
+              <label>3wi<input name="threeWicketHauls" type="number" min="0" value="0" /></label>
+              <label>5wi<input name="fiveWicketHauls" type="number" min="0" value="0" /></label>
+              <label>Best figure<input name="bestFigure" type="text" placeholder="e.g. 5/29" value="0/0" /></label>
+            </div>
+            <button type="submit" class="primary-btn">Save bowling stats</button>
+          </form>
+        </div>
+      </section>
+
+      <section class="card table-card">
+        <h2>Batting records</h2>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>S. No.</th>
+                <th>Player Name</th>
+                <th>Matches</th>
+                <th>Innings</th>
+                <th>NOs</th>
+                <th>Runs</th>
+                <th>Ball Faced</th>
+                <th>Average</th>
+                <th>Strike Rate</th>
+                <th>0s</th>
+                <th>30s</th>
+                <th>50s</th>
+                <th>100s</th>
+                <th>4s</th>
+                <th>6s</th>
+                <th>Best Score</th>
+              </tr>
+            </thead>
+            <tbody id="batting-table-body"></tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="card table-card">
+        <h2>Bowling records</h2>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>S. No.</th>
+                <th>Player Name</th>
+                <th>Innings</th>
+                <th>Wickets</th>
+                <th>Runs</th>
+                <th>Overs</th>
+                <th>Ball Bowled</th>
+                <th>Average</th>
+                <th>Economy</th>
+                <th>Strike Rate</th>
+                <th>3wi</th>
+                <th>5wi</th>
+                <th>Best Figure</th>
+              </tr>
+            </thead>
+            <tbody id="bowling-table-body"></tbody>
+          </table>
+        </div>
+      </section>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
